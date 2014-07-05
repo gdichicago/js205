@@ -41,6 +41,10 @@ body {
     font-size: $fontSize * 0.7;
     line-height: $fontSize * 0.6;
     padding: 15px;
+    &.small {
+      font-size: $fontSize * 0.4;
+      line-height: $fontSize * 0.5;
+    }
   }
 
   a, a.roll {
