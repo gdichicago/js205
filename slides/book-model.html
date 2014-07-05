@@ -1,0 +1,13 @@
+<h2><code>Book</code> Model</h2>
+
+<p>Sets defaults and computes properties.</p>
+
+<pre><code class="javascript" contenteditable>function BookModel(bookJSON) {
+  this.title     = bookJSON.title || 'Untitled';
+  this.author    = bookJSON.author || 'Unknown author';
+  this.asin      = bookJSON.asin;
+  this.thumbnail = bookJSON.thumbnail;
+  this.rating    = bookJSON.rating;
+  this.review    = bookJSON.review || '';
+  this.url       = 'http://www.amazon.com/gp/product/' + this.asin + '?tag=amazonsimilar-20';
+}</code></pre>

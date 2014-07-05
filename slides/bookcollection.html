@@ -1,0 +1,16 @@
+<h2><code>BookCollection</code></h2>
+
+<p>Creates an array of <code>BookModel</code>s and provides sorting options.</p>
+
+<pre><code class="javascript" contenteditable>function BookCollection(booksJSON) {
+  this.items = [];
+  for (var i = 0; i < booksJSON.length; i++) {
+    this.items.push(new BookModel(booksJSON[i]));
+  }
+};
+
+BookCollection.prototype.sort = function() {
+  this.items.sort(function(bookA, bookB){
+    return (bookA.rating - bookB.rating);
+  });
+};</code></pre>
