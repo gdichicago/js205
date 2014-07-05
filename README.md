@@ -53,5 +53,5 @@ If you need to brush up on your HTML and CSS, you can review The Beginner's Guid
 * What is a model? What is a view?
 * Creating our own mini JavaScript framework
 * Nesting views
-* MV* frameworks: types and some popular frameworks
+* MV? frameworks: types and some popular frameworks
 
