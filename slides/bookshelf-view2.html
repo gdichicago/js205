@@ -1,0 +1,33 @@
+<h2><code>BookShelf</code> View</h2>
+
+<p><a href="https://gist.github.com/feministy/b3f3b999a35a87c56dc0">View larger</a></p>
+
+<pre><code class="javascript small" contenteditable>function BookShelfView(books) {
+  var shelfDiv = $('&lt;div&gt;');
+  for (var i = 0; i &lt; books.items.length; i++) {
+    var book = books.items[i];
+    // Create a div with a linked image inside it,
+    // and add that to the shelf div
+    var bookDiv = $('&lt;div class="book"&gt;');
+    var bookLink = $('&lt;a&gt;');
+    bookLink.attr('href', book.url);
+    var bookCover = $('&lt;img&gt;');
+    bookCover.attr('src', book.thumbnail);
+    bookLink.append(bookCover);
+    bookDiv.append(bookLink);
+
+    shelfDiv.append(bookDiv);
+
+    // On mouseover, pop up the review
+    bookDiv.bind('mouseover', function(e) {
+        var reviewDiv = $('&lt;div class="book-review"&gt;');
+        reviewDiv.html('&lt;strong&gt;' + book.rating + ' stars: &lt;/strong&gt;' + (book.review || ' No review.'));
+        reviewDiv.css({'position': 'absolute', 'top':  e.pageY, 'left': e.pageX});
+        $('body').append(reviewDiv);
+    });
+    bookDiv.bind('mouseout', function() {
+      $('.book-review').remove();
+    });
+  }
+  return shelfDiv;
+}</code></pre>

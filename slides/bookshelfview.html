@@ -1,0 +1,12 @@
+<h2><code>BookShelfView</code></h2>
+
+<p>And then a <code>BookShelfView</code>, that uses <code>BookView</code>s.</p>
+
+<pre><code class="javascript" contenteditable>function BookShelfView(books) {
+  var shelfDiv = $('&lt;div&gt;');
+  for (var i = 0; i &lt; books.items.length; i++) {
+    var book = books.items[i];
+    shelfDiv.append(new BookView(book));
+  }
+  return shelfDiv;
+}</code></pre>

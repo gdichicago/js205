@@ -1,0 +1,16 @@
+<h2><code>BookView</code></h2>
+
+<p>First we make a <code>BookView</code>:</p>
+
+<pre><code class="javascript" contenteditable>function BookView(book) {
+  var bookDiv = $('&lt;div class="book"&gt;');
+  var bookLink = $('&lt;a&gt;');
+  bookLink.attr('href', book.url);
+  var bookCover = $('&lt;img&gt;');
+  bookCover.attr('src', book.thumbnail);
+  bookLink.append(bookCover);
+  bookDiv.append(bookLink);
+
+  // Attach event listeners
+  return bookDiv;
+}</code></pre>
