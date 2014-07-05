@@ -3,6 +3,7 @@
 body {
   @include font-base;
   background-color: $background;
+  line-height: $fontSize * 0.5;
 }
 
 #container {
@@ -54,4 +55,10 @@ h4 {
 
 header {
   padding-bottom: 20px;
+}
+
+code {
+  font-weight: 700;
+  padding: 5px;
+  background-color: lighten($background, 10%);
 }

@@ -3,7 +3,8 @@ body {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 2em;
   font-weight: 400;
-  background-color: #f2f2f2; }
+  background-color: #f2f2f2;
+  line-height: 1em; }
 
 #container {
   max-width: 1000px;
@@ -47,3 +48,8 @@ h4 {
 
 header {
   padding-bottom: 20px; }
+
+code {
+  font-weight: 700;
+  padding: 5px;
+  background-color: white; }
