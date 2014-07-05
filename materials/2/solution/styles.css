@@ -1,0 +1,11 @@
+.video-modal {
+  position: absolute;
+  top: 100px;
+  left: 40%;
+  width: auto;
+  padding: 10px;
+  background: #ffcc00;
+  border: 1px solid black;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #888;
+}
