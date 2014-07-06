@@ -28,11 +28,13 @@ body {
     font-size: 1.4em;
     line-height: 1.2em;
     padding: 15px; }
+    .reveal .slides section pre code.small {
+      font-size: 0.8em;
+      line-height: 1em; }
   .reveal .slides section a, .reveal .slides section a.roll {
     color: #e64c66;
     text-decoration: none;
-    font-weight: 700;
-    padding: 50px; }
+    font-weight: 700; }
     .reveal .slides section a:hover, .reveal .slides section a.roll:hover {
       color: #2d3e50; }
   .reveal .slides section .strike {
