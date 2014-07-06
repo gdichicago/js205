@@ -2,7 +2,7 @@
 
 Slides are built using the [Yeoman Reveal generator template](https://github.com/gdichicago/yeoman_reveal_template). See the repo for instructions on making modifications to the slides.
 
-Slides and materials are hosted [here](http://gdichicago.com/classes/js205).
+Slides and materials are hosted [here](http://gdichicago.com/classes/js205/workshop).
 
 ## Course description
 
