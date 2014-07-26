@@ -27,10 +27,11 @@ function VideoModel(videoJSON) {
 }
 
 function VideoCollection(videosJSON) {
-  this.items = [];
-  for (var i = 0; i < videosJSON.length; i++) {
-    this.items.push(new VideoModel(videosJSON[i]));
-  }
+  // More on the Array#map function:
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FArray%2Fmap
+  this.items = videosJSON.map(function(videoJSON){
+    return new VideoModel(videoJSON)
+  });
 };
 
 VideoCollection.prototype.sort = function() {
