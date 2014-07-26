@@ -22,9 +22,16 @@ function VideoModel(videoJSON) {
   this.youtubeId = videoJSON.youtubeId;
   this.title     = videoJSON.title || 'Untitled';
   this.author    = videoJSON.author || 'No author';
-  this.thumbURL  = 'http://i3.ytimg.com/vi/' + this.youtubeId + '/default.jpg';
-  this.embedURL  = 'http://www.youtube.com/embed/' + this.youtubeId;
 }
+
+VideoModel.prototype.thumbURL = function() {
+  return 'http://i3.ytimg.com/vi/' + this.youtubeId + '/default.jpg';
+}
+
+VideoModel.prototype.embedURL = function() {
+  return 'http://www.youtube.com/embed/' + this.youtubeId;
+}
+
 
 function VideoCollection(videosJSON) {
   this.items = [];
@@ -45,7 +52,7 @@ function addVideoToList(video) {
   videoLink.append(video.title);
   var linkUrl = videoLink.attr('href');
   var thumbnailImg = $('<img>');
-  thumbnailImg.attr('src', video.thumbURL);
+  thumbnailImg.attr('src', video.thumbURL());
   videoLink.append(thumbnailImg);
 
   /* On click, we'll make a modal with the title and video iframe */
@@ -55,7 +62,7 @@ function addVideoToList(video) {
     var videoTitle = $('<h2>');
     videoTitle.html(video.title + ' <small>' + video.author + '</small>');
     var videoEmbed = $('<iframe></iframe>');
-    videoEmbed.attr('src', video.embedURL);
+    videoEmbed.attr('src', video.embedURL());
     videoEmbed.attr('width', 560);
     videoEmbed.attr('height', 315);
 
