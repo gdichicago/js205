@@ -27,10 +27,9 @@ function VideoModel(videoJSON) {
 }
 
 function VideoCollection(videosJSON) {
-  this.items = [];
-  for (var i = 0; i < videosJSON.length; i++) {
-    this.items.push(new VideoModel(videosJSON[i]));
-  }
+  this.items = videosJSON.map(function(videoJSON){
+    return new VideoModel(videoJSON)
+  });
 };
 
 VideoCollection.prototype.sort = function() {
@@ -74,9 +73,11 @@ function addVideoToList(video) {
 $(document).ready(function() {
 
   var videos = new VideoCollection(videosJSON);
+
   videos.sort();
 
-  for (var i = 0; i < videos.items.length; i++) {
-    addVideoToList(videos.items[i]);
-  }
+  videos.items.forEach(function(video){
+    addVideoToList(video)
+  });
+
 });

@@ -27,7 +27,7 @@ function VideoModel(videoJSON) {
 }
 
 function VideoCollection(videosJSON) {
-  // More on the Array#map function:
+  // More on the Array.prototype.map function:
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FArray%2Fmap
   this.items = videosJSON.map(function(videoJSON){
     return new VideoModel(videoJSON)
@@ -75,9 +75,12 @@ function addVideoToList(video) {
 $(document).ready(function() {
 
   var videos = new VideoCollection(videosJSON);
-  videos.sort();
 
-  for (var i = 0; i < videos.items.length; i++) {
-    addVideoToList(videos.items[i]);
-  }
+  videos.sort();
+  // Array.prototype.forEach
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach?redirectlocale=en-US&redirectslug=JavaScript%2FReference%2FGlobal_Objects%2FArray%2FforEach
+  videos.items.forEach(function(video){
+    addVideoToList(video)
+  });
+
 });

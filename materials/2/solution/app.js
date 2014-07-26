@@ -27,10 +27,9 @@ function VideoModel(videoJSON) {
 }
 
 function VideoCollection(videosJSON) {
-  this.items = [];
-  for (var i = 0; i < videosJSON.length; i++) {
-    this.items.push(new VideoModel(videosJSON[i]));
-  }
+  this.items = videosJSON.map(function(videoJSON){
+    return new VideoModel(videoJSON)
+  });
 };
 
 VideoCollection.prototype.sort = function() {
@@ -75,11 +74,14 @@ function VideoItemView(video) {
 
 $(document).ready(function() {
 
+  var videoList = $('#video-list');
   var videos = new VideoCollection(videosJSON);
+
   videos.sort();
 
-  for (var i = 0; i < videos.items.length; i++) {
-    var videoItem = new VideoItemView(videos.items[i]);
-    $('#videos-list').append(videoItem);
-  }
+  videos.items.forEach(function(video){
+    var videoItem = new VideoItemView(video);
+    videoList.append(videoItem);
+  });
+
 });
